@@ -62,7 +62,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 teller-log: ## Run teller. To add arguments, do 'make ARGS="--foo" teller'.
-	go build -o coind main.go ${ARGS}
+	go build -o coind coind.go ${ARGS}
 #	rm -rf teller.log
 	nohup ./coind &
 	make log;

@@ -1,0 +1,11 @@
+language: go
+
+go:
+    - "1.9"
+
+install:
+  - make install-linters
+  - make test
+
+script:
+  - make lint || true # do not break build
